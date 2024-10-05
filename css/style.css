@@ -1,0 +1,850 @@
+/* Importación de la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* General para todo */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* html y body ocupan el 100% */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal innecesario */
+}
+
+/* General */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex: 1; /* el main usa el espacio restante */
+}
+
+h1, h2, h3, p {
+    word-wrap: break-word; /* Fuerza el salto de línea si es necesario */
+    max-width: 100%;
+}
+
+.contentWrapper {
+    flex: 1; /* Asegura que el contenido crezca para llenar el espacio entre header y footer */
+}
+
+/* Navegación */
+header {
+    background-color:rgba(34, 34, 34, 0.85);
+    padding: 20px;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo y menú */
+    align-items: center;
+    gap: 20px; /* Espacio entre el logo y el menú */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar .logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.navbar .menu {
+    display: grid; /* Cambiamos a Grid */
+    grid-auto-flow: column; /* Asegura que los elementos se distribuyan en una fila */
+    grid-gap: 30px; /* Mantiene el espacio entre los elementos */
+    list-style: none;
+}
+
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    background-color: #444; /* hover-efecto al pasar el mouse */
+}
+
+/* Sección de perfil */
+.perfil {
+    display: flex;
+    justify-content: flex-end; /* alinea el contenido a la derecha */
+    align-items: center;
+    margin: 50px 0;
+}
+
+.perfil .avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px; /* espacio entre la imagen y el panel de redes sociales */
+}
+
+.perfil img {
+    z-index: 2;
+    max-width: 350px; 
+    margin-bottom: 20px;
+}
+
+.perfil .social-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 10px;
+    margin-top: 0;
+    margin-right: 20px;
+}
+
+.perfil .social-links a {
+    color: white;
+}
+
+.perfil .social-links img {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* fondo claro */
+    padding: 1px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.perfil .social-links img:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* fondo mas claro al hacer hover */
+    transform: scale(1.1);
+}
+
+
+/* PC y Equipos */
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* dos columnas de igual tamaño */
+    gap: 20px; /* espacio entre las columnas */
+    margin: 50px 0;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.pc-specs, .equipment-specs {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pc-specs h2, .equipment-specs h2 {
+    font-size: 1.8rem;
+    color: #f0a500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pc-specs ul, .equipment-specs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pc-specs ul li, .equipment-specs ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Enlaces y hover en las especificaciones */
+.pc-specs ul li a, .equipment-specs ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.pc-specs ul li a:hover, .equipment-specs ul li a:hover {
+    color: #f0a500;
+}
+
+
+/* Principal */
+.principal {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.principal h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.principal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Roles */
+.roles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button.rol {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+button.rol:hover {
+    background-color: #555;
+}
+
+/* email */
+.ingresarCorreo input {
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #555;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 60%;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222222;
+    flex-shrink: 0; 
+}
+
+
+footer .contacto p {
+    font-size: 0.9rem;
+    color: #999;
+}
+/* Footer específico para inicio */
+.footerInicio {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    flex-shrink: 0; 
+}
+
+.footerInicio p {
+    font-size: 0.9rem;
+    color: #999;
+}
+/* Fondo para otras páginas */
+.fondoJoinTeam {
+    background-image: url(../assets/img/backgrounds/fondoJoinTeam.jpg);
+    background-size: cover;
+}
+
+.fondoInicio {
+    background: url('../assets/img/backgrounds/fondoinicio.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.sobre-mi-page .content {
+    flex-grow: 1; /* Para que el contenido crezca y empuje el footer al fondo */
+}
+
+.sobre-mi-page {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url('../assets/img/backgrounds/fondoSobreMi.webp'); /* oscurecer la imagen */
+    background-size: cover;
+    background-position: center;
+}
+.sobre-mi-page .principal {
+    padding-top: 200px; 
+}
+
+
+.sobre-mi-page .principal h1 {
+    font-size: 2.5rem;
+    color: #f0a500; 
+    margin-bottom: 20px;
+}
+
+.sobre-mi-page .principal article {
+    margin-top: 200px; 
+}
+
+
+.sobre-mi-page .principal p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.fondoVideos {
+    background-image: url(../assets/img/backgrounds/fondovideos.jpeg);
+    background-size: cover;
+}
+
+/* Fondo para la tienda */
+.fondoStore {
+    background-image: url(../assets/img/backgrounds/fondoStore.webp);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+/* Agrupar videos */
+.agruparVideosPlaylist {
+    display: flex;  
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.videos1 {
+    display: flex;  
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 10px;
+}
+
+.videos {
+    display: flex;  
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    gap: 10px;
+}
+
+/* Sección de descuento */
+.fondoDescuento {
+    width: 100%; /* Elimina el ancho fijo */
+    max-width: 100%;
+    min-height: 300px; /* O el valor que prefieras para asegurar una altura mínima */
+    height: auto;
+    background-image: url(../assets/img/backgrounds/descuentofondo.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    padding: 2rem; /* Ajusta el padding usando rem para que sea relativo */
+}
+
+.discount-section {
+    position: relative;
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.discount-section h1 {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.discount-details h2 {
+    font-size: 2rem;
+}
+
+.discount-details h3 {
+    font-size: 1.25rem;
+}
+
+.discount {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.discount-details h2 {
+    font-size: 3rem; 
+    font-weight: bold;
+    color: black;
+}
+
+.discount-details h3 {
+    font-size: 1.5rem; 
+    color: black;
+    margin-top: -10px; /* Ajuste para reducir espacio */
+}
+
+/* Estilos para productos dentro del descuento */
+.windbreaker, .bomber, .hood {
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.windbreaker {
+    background-image: url(../assets/img/merch/WINDBREAKER-F_2048x.webp);
+}
+
+.bomber {
+    background-image: url(../assets/img/merch/BOMBER-B_2048x.webp);
+}
+
+.hood {
+    background-image: url(../assets/img/merch/HOOD-F_2048x.webp);
+}
+
+/* Sección de productos */
+.productos-section {
+    padding: 20px 0;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.productos article {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.productos img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Media Queries para pantallas grandes  */
+@media (max-width: 1024px) {
+    /* Navbar */
+    .navbar {
+        grid-template-columns: 1fr 2fr; /* Dos columnas: logo más pequeña y menú más grande */
+        gap: 20px;
+    }
+
+    .navbar .menu {
+        grid-auto-flow: column; /* Los enlaces permanecen en fila */
+        justify-content: center;
+        gap: 25px; /* Mayor espacio entre los enlaces */
+    }
+
+    .navbar .logo span {
+        font-size: 1.6rem; /* Ajusta el tamaño del logo */
+    }
+
+    /* Perfil */
+    .perfil {
+        justify-content: space-around;
+        margin: 40px 0;
+    }
+
+    .perfil img {
+        max-width: 320px; /* Ajuste de tamaño para pantallas grandes */
+    }
+
+    .perfil .social-links img {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Info (PC y Equipos) */
+    .info {
+        grid-template-columns: 1fr 1fr; /* Dos columnas igualadas */
+        padding: 30px;
+    }
+
+    .pc-specs, .equipment-specs {
+        padding: 30px;
+    }
+
+    /* Principal */
+    .principal h1 {
+        font-size: 2.75rem;
+        margin-bottom: 20px;
+    }
+
+    .principal h2 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    /* Roles */
+    .roles {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    button.rol {
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+
+    /* Ingresar correo */
+    .ingresarCorreo input {
+        width: 70%; /* Ajuste del ancho para pantallas grandes */
+        font-size: 1.1rem;
+        padding: 14px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    footer .contacto p {
+        font-size: 1rem;
+    }
+
+    /* FooterInicio */
+    .footerInicio {
+        padding: 30px;
+        text-align: center;
+    }
+
+    /* Agrupar videos */
+    .agruparVideosPlaylist {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    /* Fondo de descuento */
+    .fondoDescuento {
+        min-height: 350px;
+        padding: 2.5rem;
+    }
+
+    .discount-section h1 {
+        font-size: 2.75rem;
+    }
+
+    .discount-details h2 {
+        font-size: 3.25rem;
+    }
+
+    .discount-details h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Productos */
+    .productos {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Mejora la flexibilidad de las columnas */
+        gap: 20px;
+    }
+
+    .productos article {
+        padding: 20px;
+    }
+
+    .productos img {
+        border-radius: 10px;
+    }
+}
+
+
+
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        grid-template-columns: 1fr; /* Cambia a una columna */
+        justify-items: center;
+        gap: 15px;
+    }
+
+    .navbar .menu {
+        grid-auto-flow: row; /* Apila los enlaces en una columna */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar .logo span {
+        font-size: 1.4rem; /* Ajusta el tamaño del logo */
+    }
+
+    /* Perfil */
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        margin: 40px 0;
+    }
+
+    .perfil .avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .perfil img {
+        max-width: 300px; /* Ajusta el tamaño de la imagen del perfil */
+    }
+
+    .perfil .social-links img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Info (PC y Equipos) */
+    .info {
+        grid-template-columns: 1fr; /* Cambia a una columna */
+        padding: 20px;
+    }
+
+    .pc-specs, .equipment-specs {
+        padding: 25px;
+    }
+
+    /* Principal */
+    .principal h1 {
+        font-size: 2.25rem;
+        margin-bottom: 15px;
+    }
+
+    .principal h2 {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+
+    /* Roles */
+    .roles {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button.rol {
+        font-size: 0.95rem;
+        padding: 12px 18px;
+    }
+
+    /* Ingresar correo */
+    .ingresarCorreo input {
+        width: 75%; /* Ajustar el ancho para dispositivos de tamaño medio */
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    /* FooterInicio */
+    .footerInicio {
+        padding: 25px;
+        text-align: center;
+    }
+
+    /* Agrupar videos */
+    .agruparVideosPlaylist {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Fondo de descuento */
+    .fondoDescuento {
+        min-height: 280px;
+        padding: 1.75rem;
+    }
+
+    .discount-section h1 {
+        font-size: 2.25rem;
+    }
+
+    .discount-details h2 {
+        font-size: 2.75rem;
+    }
+
+    .discount-details h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Productos */
+    .productos {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Más adaptabilidad */
+        gap: 15px;
+    }
+
+    .productos article {
+        padding: 15px;
+    }
+
+    .productos img {
+        border-radius: 8px;
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    /* Navbar */
+    .navbar {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .navbar .menu {
+        grid-auto-flow: row; /* Apila los enlaces en una columna */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .navbar .logo span {
+        font-size: 1.2rem; /* Ajusta el tamaño del logo */
+    }
+
+    /* Perfil */
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+    }
+
+    .perfil .avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .perfil img {
+        max-width: 250px; /* Ajusta el tamaño de la imagen del perfil */
+    }
+
+    .perfil .social-links img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Info (PC y Equipos) */
+    .info {
+        grid-template-columns: 1fr; /* Cambia a una columna */
+        padding: 10px;
+    }
+
+    .pc-specs, .equipment-specs {
+        padding: 20px; /* Mantén consistencia con 768px */
+    }
+
+    /* Principal */
+    .principal h1 {
+        font-size: 2rem;
+        margin-bottom: 20px; /* Ajuste de margen */
+    }
+
+    .principal h2 {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+
+    /* Roles */
+    .roles {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button.rol {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    /* Ingresar correo */
+    .ingresarCorreo input {
+        width: 80%;
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* FooterInicio */
+    .footerInicio {
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Agrupar videos */
+    .agruparVideosPlaylist {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Fondo de descuento */
+    .fondoDescuento {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+
+    .discount-section h1 {
+        font-size: 2rem;
+    }
+
+    .discount-details h2 {
+        font-size: 2.5rem;
+    }
+
+    .discount-details h3 {
+        font-size: 1rem;
+    }
+
+    /* Productos */
+    .productos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .productos article {
+        padding: 10px;
+    }
+
+    .productos img {
+        border-radius: 5px;
+    }
+}
